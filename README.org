@@ -1,0 +1,35 @@
+#+title: LaTeX Template
+Welcome to my personal template! To use the full potential of this awesome template, you'll need to know some things:
+- This template uses variables to keep some information constant throughout the file. These can be located at the "variables" section
+- A title page is also available using all of these variables
+- You can change the babel language using the following command before the preamble: ~\PassOptionsToPackage{YOUR_LANGUAGE}{babel}~. If not, it'll default to English
+
+** Languages
+This template in its current state supports the following languages for some misc things (theorem title, exercise title, etc):
+- Spanish
+- English
+
+** Variables
+This template uses some variables to make some information consistent throughout the file:
+
+| *doctitle*          | Document title (/ex. Template/)
+| *doctype*           | Document type (/ex. Notes, Documentation, etc/)
+| *authorname*        | Author name (/ex. Zygmut/). If your document has more than one author this variable should include your names, as it's used for the header (or not, you could just redifine your fancy header). Remember to change the titlepage (if you use it) to show multiple authors
+| *authorcontact*     | Author contact information. I tend to put my email and some legal identification document (/ex. NIF, Passport/)
+| *backgroundImage*   | Background image. If you dislike this feature, just put the null.png file as background. Yes this is pretty bad. Yes I tried to fix it for over 5 hours. Yes I won't fix it in the near future
+| *institution*       | Name of your institution (/ex. Massachusetts Institute of Technology/)
+| *institutionImage*  | Used only in the titlepage. Defined as the path to your institution image (/ex. img/MIT.png/). If you dislike this feature use \def\institutionImage{}
+| *group*             | Group number. Some institutions divide classes on various groups, so you can use this to display your group (/ex. Group 01/)
+
+** Custom commands
+This template comes with some custom commands I regularly use
+| *\rom{}*            | Given some number, prints it's roman representation (/ex. \rom{5} -> V/)
+| *\CustomColBox{}{}* | Given a color and it's box content, creates a box with that color as background (/ex. \CustomColBox{red}{hello}/)
+| *\CustomBox{}* | Given it's box content, creates a box with a withe background and that content (/ex. \CustomBox{hello}/)
+
+** Custom enviroments
+Enviroments use the /\begin{} \end{}/ syntax. These are some custom ones that I use
+| code | Given the font size and the programming language, prints the code with some code highlighting (/ex. \begin{code}{\scriptsize}{python} ... \end{code}/)
+
+** Last comments
+Feel free to use this template. I'd love if you mention me at the end like: ~this template was developed by this fella~ as this will make this template more accesible and I'll get some feedback an things to improve
