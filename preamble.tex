@@ -1,0 +1,102 @@
+% Variables
+\def\doctitle{Template}
+\def\doctype{\LaTeX{}}
+\def\authorname{YOUR\_NAME}
+\def\authorcontact{\textit{YOUR\_MAIL}}
+\def\backgroundImage{img/null.png}
+\def\institution{YOUR\_INSTITUTION\_NAME}
+\def\institutionImage{img/null.png}
+\def\group{Group XX}
+
+% Packages
+\usepackage[a4paper, total={6in, 8in}]{geometry} % Page geometry
+\usepackage[utf8]{inputenc}                      % Codification 
+\usepackage{babel}                               % Language
+\usepackage{minted}                              % Insert code 
+\usepackage{enumitem}                            % Custom lists
+\usepackage{graphicx}                            % Graphics 
+\usepackage{amsmath, amsthm, amssymb}            % Maths
+\usepackage{hyperref}                            % Clickable links
+\usepackage[table,xcdraw]{xcolor}                % Colored text
+\usepackage{colortbl}                            % Colored table cells
+\usepackage[most]{tcolorbox}                     % Custom boxes
+\usepackage{multicol}                            % Multi column environment
+\usepackage{multirow}                            % Join rows in tables
+\usepackage{lipsum}                              % Dummy text
+\usepackage{fancyhdr}                            % Custom page format
+\usepackage{tikz}                                % Custom figures
+\usetikzlibrary{arrows,calc,babel}               % Tikz libraries 
+\usepackage{dirtytalk}                           % Decent quotation marks
+\usepackage{adjustbox}                           % Adjust environments
+\usepackage[makeroom]{cancel}                    % Cancel for math mode
+\usepackage{etoolbox}                            % ifdefempty for macro administration
+\usepackage[pages=all]{background}               % Semi-transparent image as background
+\setlength\parindent{0pt}                        % No indentation
+
+\newtheorem{definition}{\iflanguage{spanish}{Definición}{Definition}}
+
+\newtcbtheorem{exercise}{\iflanguage{spanish}{Ejercicio}{Exercise}}{
+    % Frame stuff
+	enhanced,frame empty,interior empty,
+	colframe=blue,
+	borderline west={1pt}{0pt}{green!25!blue},
+	left=0.2cm,
+	% Title stuff
+	attach boxed title to top left={yshift=-2mm,xshift=-2mm},
+	coltitle=black,
+	fonttitle=\bfseries,
+	colbacktitle=white,
+	boxed title style={boxrule=.3mm,sharp corners, colback=white}}{exercise}
+
+% Semi-transparent image as background
+\backgroundsetup{
+    scale=1,
+    color=black,
+    opacity=0.05,
+    angle=0,
+    contents={
+        \includegraphics[width=15cm,height=15cm]{\backgroundImage}
+    }
+}
+
+% Background color for minted and text coloring style
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\usemintedstyle{friendly}
+
+% Roman number macro
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+% Box macros
+\newcommand{\CustomColBox}[2]{
+\begin{tcolorbox}[boxrule=0.3mm, colback=#1, colframe=black, sharp corners]
+#2
+\end{tcolorbox}}
+
+\newcommand{\CustomBox}[1]{
+\begin{tcolorbox}[boxrule=0.3mm, colback=white, colframe=black, sharp corners]
+#1
+\end{tcolorbox}}
+
+% Code macro. You can escape with "@"
+\newenvironment{code}[2]
+ {\VerbatimEnvironment
+  \begin{minted}[fontsize=#1, linenos,breaklines,numbersep=8pt,gobble=0,frame=lines,bgcolor=bg,framesep=3mm,escapeinside=@@]{#2}}
+ {\end{minted}}
+
+% Fancyhdr
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\doctitle: \doctype} % Up right
+\lhead{\authorname}         % Up left
+\rfoot{\thepage}            % Down right
+
+% Hypersetup colors
+\hypersetup{
+	colorlinks=true,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=blue
+}
