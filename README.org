@@ -14,7 +14,7 @@ This template uses some variables to make some information consistent throughout
 
 | *doctitle*          | Document title (/ex. Template/)
 | *doctype*           | Document type (/ex. Notes, Documentation, etc/)
-| *authorname*        | Author name (/ex. Zygmut/). If your document has more than one author this variable should include your names, as it's used for the header (or not, you could just redifine your fancy header). Remember to change the titlepage (if you use it) to show multiple authors
+| *authorname*        | Author name (/ex. Zygmut/). If your document has more than one author this variable should include your names, as it's used for the header (or not, you could just redefine your fancy header). Remember to change the titlepage (if you use it) to show multiple authors
 | *authorcontact*     | Author contact information. I tend to put my email and some legal identification document (/ex. NIF, Passport/)
 | *backgroundImage*   | Background image. If you dislike this feature, just put the null.png file as background. Yes this is pretty bad. Yes I tried to fix it for over 5 hours. Yes I won't fix it in the near future
 | *institution*       | Name of your institution (/ex. Massachusetts Institute of Technology/)
@@ -38,4 +38,4 @@ Enviroments use the /\begin{} \end{}/ syntax. These are some custom ones that I 
 #+html: <p align="center"><img src="./assets/definition_ex.png" /></p>
 
 ** Last comments
-Feel free to use this template. I'd love if you mention me at the end like: /this template was developed by this fella/ as this will make this template more accesible and I'll get some feedback and things to improve
+Feel free to use this template. I'd love if you mention me at the end like: /this template was developed by this fella/ as this will make this template more accesible and I'll get some feedback on things to improve
