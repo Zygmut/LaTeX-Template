@@ -23,13 +23,13 @@ This template uses some variables to make some information consistent throughout
 
 ** Custom commands
 This template comes with some custom commands I regularly use
-| *\rom{}*            | Given some number, prints it's roman representation (/ex. \rom{5} -> V/)
-| *\CustomColBox{}{}* | Given a color and it's box content, creates a box with that color as background (/ex. \CustomColBox{red}{hello}/)
-| *\CustomBox{}* | Given it's box content, creates a box with a withe background and that content (/ex. \CustomBox{hello}/)
+| *rom*           | Given some number, prints it's roman representation (/ex. \rom{5} -> V/)
+| *CustomColBox*  | Given a color and it's box content, creates a box with that color as background (/ex. \CustomColBox{red}{hello}/)
+| *CustomBox*     | Given it's box content, creates a box with a white background and that content (/ex. \CustomBox{hello}/)
 
 ** Custom enviroments
 Enviroments use the /\begin{} \end{}/ syntax. These are some custom ones that I use
-| code | Given the font size and the programming language, prints the code with some code highlighting (/ex. \begin{code}{\scriptsize}{python} ... \end{code}/)
+| *code* | Given the font size and the programming language, prints the code with some code highlighting (/ex. \begin{code}{\scriptsize}{python} ... \end{code}/)
 
 ** Last comments
 Feel free to use this template. I'd love if you mention me at the end like: ~this template was developed by this fella~ as this will make this template more accesible and I'll get some feedback an things to improve
