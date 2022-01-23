@@ -32,4 +32,4 @@ Enviroments use the /\begin{} \end{}/ syntax. These are some custom ones that I 
 | *code* | Given the font size and the programming language, prints the code with some code highlighting (/ex. \begin{code}{\scriptsize}{python} ... \end{code}/)
 
 ** Last comments
-Feel free to use this template. I'd love if you mention me at the end like: ~this template was developed by this fella~ as this will make this template more accesible and I'll get some feedback an things to improve
+Feel free to use this template. I'd love if you mention me at the end like: ~this template was developed by this fella~ as this will make this template more accesible and I'll get some feedback and things to improve
