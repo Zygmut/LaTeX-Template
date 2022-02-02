@@ -14,7 +14,8 @@ This template uses some variables to make some information consistent throughout
 
 | *doctitle*          | Document title (/ex. Template/)
 | *doctype*           | Document type (/ex. Notes, Documentation, etc/)
-| *authorname*        | Author name (/ex. Zygmut/). If your document has more than one author this variable should include your names, as it's used for the header (or not, you could just redefine your fancy header). Remember to change the titlepage (if you use it) to show multiple authors
+| *headerauthor*      | Abreviated author names, this will be displayed in the header of every page
+| *authorname*        | Author name (/ex. Zygmut/). If your document has more than one author this variable should include your names separated by // 
 | *authorcontact*     | Author contact information. I tend to put my email and some legal identification document (/ex. NIF, Passport/)
 | *backgroundImage*   | Background image. If you dislike this feature, just put the null.png file as background. Yes this is pretty bad. Yes I tried to fix it for over 5 hours. Yes I won't fix it in the near future
 | *institution*       | Name of your institution (/ex. Massachusetts Institute of Technology/)
