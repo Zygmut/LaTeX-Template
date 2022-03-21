@@ -25,12 +25,14 @@ This template uses some variables to make some information consistent throughout
 ** Custom commands
 This template comes with some custom commands I regularly use
 | *rom*           | Given some number, prints it's roman representation (/ex. \rom{5} -> V/)
-| *CustomColBox*  | Given a color and it's box content, creates a box with that color as background (/ex. \CustomColBox{red}{hello}/)
-| *CustomBox*     | Given it's box content, creates a box with a white background and that content (/ex. \CustomBox{hello}/)
+| *ccbox*         | Given a color and it's box content, creates a box with that color as background (/ex. \ccbox{red}{hello}/)
+| *cbox*          | Given it's box content, creates a box with a white background and that content (/ex. \cbox{hello}/)
 
 ** Custom enviroments
 Enviroments use the /\begin{} \end{}/ syntax. These are some custom ones that I use
-| *code* | Given the font size and the programming language, prints the code with some code highlighting (/ex. \begin{code}{\scriptsize}{python} ... \end{code}/)
+| *code*       | Given the font size and the programming language, prints the code with some code highlighting (/ex. \begin{code}{\scriptsize}{python} ... \end{code}/)
+| *exercise*   | Given the name of the exercise and a label to reference it, prints the content of the enviroment within a blue line to emphasize it (/ex. \begin{exercise}{test}{ex:test} ... \end{exercise}/)
+| *definition* | TODO (/ex. \begin{code}{\scriptsize}{python} ... \end{code}/)
 
 ** Images
 #+html: <p align="center"><img src="./assets/example_1.png" /></p>
