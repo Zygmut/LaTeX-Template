@@ -1,11 +1,12 @@
 % Variables
 \def\doctitle{Template}
 \def\doctype{\LaTeX{}}
+\def\headerauthor{name}
 \def\authorname{name}
-\def\authorcontact{\textit{mail}}
-\def\backgroundImage{img/UIB.png}
-\def\institution{Institution Name}
-\def\institutionImage{img/UIB.png}
+\def\authorcontact{mail}
+\def\backgroundImage{assets/img/null.png}
+\def\institution{Insitution name}
+\def\institutionImage{assets/img/null.png}
 \def\group{Group XX}
 
 % Packages
@@ -28,15 +29,15 @@
 \usetikzlibrary{arrows,calc,babel}                 % Tikz libraries 
 \usepackage{dirtytalk}                             % Decent quotation marks
 \usepackage{adjustbox}                             % Adjust environments
-\usepackage[makeroom]{cancel}                      % Cancel for math mode
 \usepackage[pages=all]{background}                 % Semi-transparent image as background
+\usepackage{fontawesome5}                          % Use FontAwesome5 icons
 \setlength\parindent{0pt}                          % No indentation
 
 % Fancyhdr
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{\doctitle: \doctype} % Up right
-\lhead{\authorname}         % Up left
+\lhead{\headerauthor}       % Up left
 \cfoot{\thepage}            % Down right
 
 \renewcommand{\footrulewidth}{0.5pt} % Header line width
@@ -58,7 +59,7 @@
     opacity=0.05,
     angle=0,
     contents={
-        \includegraphics[width=15cm,height=15cm]{\backgroundImage}
+        \includegraphics[width=0.75\textwidth]{\backgroundImage}
     }
 }
 

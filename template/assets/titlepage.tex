@@ -1,0 +1,41 @@
+\NoBgThispage
+\begin{titlepage}
+	\center
+	\ifdefempty{\institutionImage}{}{\includegraphics[width=0.15\textwidth]{\institutionImage}\par\vspace{1cm}}
+	{\scshape\LARGE\institution \par}
+	\vspace{0.5cm}
+% Assignment classification
+	{\scshape\Large \doctype \par}
+	\vspace{1cm}
+% Assignment title
+    \rule{\linewidth}{0.5mm}
+	{\huge\bfseries \doctitle\par}
+	\rule{\linewidth}{0.5mm}
+	\vspace{1.5cm}
+	
+% Authors / author.
+\begin{minipage}{0.4\textwidth}
+    \begin{flushleft}
+        \large
+        \textit{\iflanguage{spanish}{Autor/es}{Author/s}}
+        
+        % Author names
+        \textsc{\authorname{}}
+    \end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+    \begin{flushright}
+        \large
+        \textit{\iflanguage{spanish}{Correo}{Mail}}
+        
+        % Author names
+        \textsc{\authorcontact{}}
+    \end{flushright}
+\end{minipage}
+
+% Bottom of the page
+	\vfill
+	{\large \texttt{\group} \\\today\par}
+    \end{titlepage}
+\newpage
