@@ -32,7 +32,6 @@ This template comes with some custom commands I regularly use
 Enviroments use the /\begin{} \end{}/ syntax. These are some custom ones that I use
 | *code*       | Given the font size and the programming language, prints the code with some code highlighting (/ex. \begin{code}{\scriptsize}{python} ... \end{code}/)
 | *exercise*   | Given the name of the exercise and a label to reference it, prints the content of the enviroment within a blue line to emphasize it (/ex. \begin{exercise}{test}{ex:test} ... \end{exercise}/)
-| *definition* | TODO (/ex. \begin{code}{\scriptsize}{python} ... \end{code}/)
 
 ** Images
 #+html: <p align="center"><img src="./assets/example_1.png" /></p>
