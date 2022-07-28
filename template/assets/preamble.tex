@@ -4,34 +4,34 @@
 \def\headerauthor{name}
 \def\authorname{name}
 \def\authorcontact{mail}
-\def\backgroundImage{assets/img/UIB.png}
-\def\institution{Universitat de les Illes Balears}
-\def\institutionImage{assets/img/UIB.png}
+\def\institution{Test Uni}
+\def\institutionImage{}
 \def\group{Group XX}
 
 % Packages
-\usepackage[a4paper, total={6in, 8.5in}]{geometry} % Page geometry
-\usepackage[utf8]{inputenc}                        % Codification 
-\usepackage{babel}                                 % Language
-\usepackage{minted}                                % Insert code 
-\usepackage{enumitem}                              % Custom lists
-\usepackage{graphicx}                              % Graphics 
-\usepackage{amsmath, amsthm, amssymb}              % Maths
-\usepackage{hyperref}                              % Clickable links
-\usepackage[table,xcdraw]{xcolor}                  % Colored text
-\usepackage{colortbl}                              % Colored table cells
-\usepackage[most]{tcolorbox}                       % Custom boxes
-\usepackage{multicol}                              % Multi column environment
-\usepackage{multirow}                              % Join rows in tables
-\usepackage{lipsum}                                % Dummy text
-\usepackage{fancyhdr}                              % Custom page format
-\usepackage{tikz}                                  % Custom figures
-\usetikzlibrary{arrows,calc,babel}                 % Tikz libraries 
-\usepackage{dirtytalk}                             % Decent quotation marks
-\usepackage{adjustbox}                             % Adjust environments
-\usepackage[pages=all]{background}                 % Semi-transparent image as background
-\usepackage{fontawesome5}                          % Use FontAwesome5 icons
-\setlength\parindent{0pt}                          % No indentation
+\usepackage[a4paper, total={6in, 8.5in}]{geometry}      % Page geometry
+\usepackage[utf8]{inputenc}                             % Codification 
+\usepackage{babel}                                      % Language
+\usepackage{minted}                                     % Insert code 
+\usepackage{enumitem}                                   % Custom lists
+\usepackage{graphicx}                                   % Graphics 
+\usepackage{amsmath, amsthm, amssymb}                   % Maths
+\usepackage{hyperref}                                   % Clickable links
+\usepackage{colortbl}                                   % Colored table cells
+\usepackage[table,xcdraw,usenames,dvipsnames]{xcolor}   % Colored text
+\usepackage[most]{tcolorbox}                            % Custom boxes
+\usepackage{multicol}                                   % Multi column environment
+\usepackage{multirow}                                   % Join rows in tables
+\usepackage{lipsum}                                     % Dummy text
+\usepackage{fancyhdr}                                   % Custom page format
+\usepackage{tikz}                                       % Custom figures
+\usetikzlibrary{arrows,calc,babel}                      % Tikz libraries 
+\usepackage{dirtytalk}                                  % Decent quotation marks
+\usepackage{adjustbox}                                  % Adjust environments
+\usepackage{fontawesome5}                               % Use FontAwesome5 icons
+\usepackage{thmtools}                                   % Theorems
+
+\setlength\parindent{0pt}                               % No indentation
 
 % Fancyhdr
 \pagestyle{fancy}
@@ -43,6 +43,11 @@
 \renewcommand{\headrulewidth}{0.5pt} % Header line width
 % \renewcommand{\footrulewidth}{0.5pt} % Footer line width
 
+% Define colors
+\colorlet{green_ref}{ForestGreen}
+\colorlet{red_ref}{RawSienna}
+\colorlet{blue_ref}{NavyBlue}
+
 % Hypersetup colors
 \hypersetup{
 	colorlinks=true,
@@ -52,19 +57,8 @@
 	urlcolor=blue
 }
 
-% Semi-transparent image as background
-\backgroundsetup{
-    scale=1,
-    color=black,
-    opacity=0.05,
-    angle=0,
-    contents={
-        \includegraphics[width=0.75\textwidth]{\backgroundImage}
-    }
-}
-
 % Background color for minted and text coloring style
-\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\definecolor{codebg}{rgb}{0.95,0.95,0.95}
 \usemintedstyle{friendly}
 
 % Roman number macro
@@ -83,23 +77,67 @@
 #2
 \end{tcolorbox}}
 
-% Code enviroment. You can escape with "@"
+% Code enviroment. Escape with "@"
 \newenvironment{code}[2]
  {\VerbatimEnvironment
-  \begin{minted}[fontsize=#1, linenos,breaklines,numbersep=8pt,gobble=0,frame=lines,bgcolor=bg,framesep=3mm,escapeinside=@@]{#2}}
+  \begin{minted}[fontsize=#1, linenos,breaklines,numbersep=8pt,gobble=0,frame=lines,bgcolor=codebg,framesep=3mm,escapeinside=@@]{#2}}
  {\end{minted}}
+ 
+% Theorems 
+% Inspired by Singularis Art's notes 
+% https://github.com/SingularisArt/notes
+%%  Boxed theorems
 
-\newtheorem{definition}{\iflanguage{spanish}{Definición}{Definition}}
+\declaretheoremstyle[
+        headfont=\bfseries\sffamily\color{green_ref!70!black}, bodyfont=\normalfont,
+        mdframed={
+            linewidth=2pt,
+            rightline=false, topline=false, bottomline=false,
+            linecolor=green_ref, backgroundcolor=green_ref!5,
+        }
+    ]{thmgreenbox}
+    
+\declaretheoremstyle[
+        headfont=\bfseries\sffamily\color{red_ref!70!black}, bodyfont=\normalfont,
+        mdframed={
+            linewidth=2pt,
+            rightline=false, topline=false, bottomline=false,
+            linecolor=red_ref, backgroundcolor=red_ref!5,
+        }
+    ]{thmredbox}
+    
+\declaretheoremstyle[
+        headfont=\bfseries\sffamily\color{blue_ref!70!black}, bodyfont=\normalfont,
+        mdframed={
+            linewidth=2pt,
+            rightline=false, topline=false, bottomline=false,
+            linecolor=blue_ref, backgroundcolor=blue_ref!5,
+        }
+    ]{thmbluebox}
 
-\newtcbtheorem{exercise}{\iflanguage{spanish}{Ejercicio}{Exercise}}{
-    % Frame stuff
-	enhanced,frame empty,interior empty,
-	colframe=blue,
-	borderline west={1pt}{0pt}{green!25!blue},
-	left=0.2cm,
-	% Title stuff
-	attach boxed title to top left={yshift=-2mm,xshift=-2mm},
-	coltitle=black,
-	fonttitle=\bfseries,
-	colbacktitle=white,
-	boxed title style={boxrule=.3mm,sharp corners, colback=white}}{exercise}
+%% Name theorems
+\declaretheoremstyle[
+  headfont=\bfseries\sffamily\color{red_ref!70!black}, bodyfont=\normalfont,
+  mdframed={
+    linewidth=2pt,
+    rightline=false, leftline=false, topline=false, bottomline=false,
+  }
+  ]{thmredname}
+ 
+%% Exercise
+
+\declaretheoremstyle[
+  headfont=\bfseries\sffamily\color{red_ref!70!black}, bodyfont=\normalfont,
+  mdframed={
+    linewidth=2pt,
+    rightline=false, leftline=false,
+    linecolor=red_ref
+  }
+  ]{thmredbottop}
+  
+% Theorem declaration
+
+\declaretheorem[style=thmgreenbox, name=\iflanguage{spanish}{Definición}{Definition}]{definition}
+\declaretheorem[style=thmbluebox, name=\iflanguage{spanish}{Ejemplo}{Example}]{example}
+\declaretheorem[style=thmredbottop, name=\iflanguage{spanish}{Ejercicio}{Exercise}]{exercise}
+\declaretheorem[style=thmredname, name=\iflanguage{spanish}{Solución}{Solution}]{solution}
