@@ -17,7 +17,6 @@ This template uses some variables to make some information consistent throughout
 | *headerauthor*      | Abreviated author names, this will be displayed in the header of every page
 | *authorname*        | Author name (/ex. Zygmut/). If your document has more than one author this variable should include your names separated by // 
 | *authorcontact*     | Author contact information. I tend to put my email and some legal identification document (/ex. NIF, Passport/)
-| *backgroundImage*   | Background image. If you dislike this feature, just put the null.png file as background. Yes this is pretty bad. Yes I tried to fix it for over 5 hours. Yes I won't fix it in the near future
 | *institution*       | Name of your institution (/ex. Massachusetts Institute of Technology/)
 | *institutionImage*  | Used only in the titlepage. Defined as the path to your institution image (/ex. img/MIT.png/). If you dislike this feature use \def\institutionImage{}
 | *group*             | Group number. Some institutions divide classes on various groups, so you can use this to display your group (/ex. Group 01/)
@@ -31,10 +30,12 @@ This template comes with some custom commands I regularly use
 ** Custom enviroments
 Enviroments use the /\begin{} \end{}/ syntax. These are some custom ones that I use
 | *code*       | Given the font size and the programming language, prints the code with some code highlighting (/ex. \begin{code}{\scriptsize}{python} ... \end{code}/)
-| *exercise*   | Given the name of the exercise and a label to reference it, prints the content of the enviroment within a blue line to emphasize it (/ex. \begin{exercise}{test}{ex:test} ... \end{exercise}/)
+| *definition* | Theorem enviroment that formats it's contents to a green box 
+| *example*    | Theorem enviroment that formats it's contents to a blue box 
+| *exercise*   | Theorem enviroment that puts it's contents between two red lines. It whould be noted that the solution to this exercise has another enviroment. Furthermore, I usually use square brackets argument to post a link to the solution i.e \begin{exercise}[Solution\ref{sol:this_exercise}] ... \end{exercise}
+| *solution*   | Theorem enviroment that puts it's contents with a red label. It whould be noted that the exercise to this solution has another enviroment. Furthermore, I usually use square brackets argument to post a link to the exercise i.e \begin{solution}[Exercise\ref{ex:this_solution}] ... \end{solution}
+
 
 ** Images
 #+html: <p align="center"><img src="./assets/example_1.png" /></p>
 #+html: <p align="center"><img src="./assets/example_2.png" /></p>
-#+html: <p align="center"><img src="./assets/exercise_ex.png" /></p>
-#+html: <p align="center"><img src="./assets/definition_ex.png" /></p>
